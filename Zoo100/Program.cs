@@ -1,34 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 using Zoo100;
 
 Console.Clear(); // очищення консолі
 
 Zoo z = new();
 
+Menu menu = new();
+
 while (true)
 {
     Console.Clear();
     Console.WriteLine("-------WELCOME ZOO-------");
-    Console.WriteLine("----------Menu-----------\r\n" +
-                     "0. Exit\n" +
-                     "1. Add Animal\r\n" +
-                     "2. Add korm\r\n" +
-                     "3. Show Korm\r\n" +
-                     "4. Show Animals\r\n" +
-                     "5. Search animal\r\n" +
-                     "6. Search korm\r\n" +
-                     "7. Save Products\n" +
-                     "8. Load Products\n" +
-                     "9. Delete Product\n" +
-                     "10. Buy Ticket\n" +
-                     "11. Show Ticket");
-    Console.WriteLine("______________________________");
 
-    Console.Write("Your choice: ");
-    int choice = int.Parse(Console.ReadLine());
+
+    menu.ShowMenu();
+    int choice = menu.AskUserInput();
+
 
     switch (choice)
     {
@@ -43,11 +29,11 @@ while (true)
             break;
 
         case 3:
-           z.ShowKorm();
+            z.ShowKorm();
             break;
 
         case 4:
-           z.ShowAnimals();
+            z.ShowAnimals();
             break;
 
         case 5:
@@ -55,26 +41,26 @@ while (true)
             break;
 
         case 6:
-           z.Searchkorm();
+            z.Searchkorm();
             break;
 
         case 7:
-           z.SaveProducts();
+            z.SaveProducts();
             break;
 
         case 8:
-           z.LoadProducts();
+            z.LoadProducts();
             break;
 
         case 9:
-           z.DeleteProduct();
+            z.DeleteProduct();
             break;
         case 10:
-           z.BuyTicket();
+            z.BuyTicket();
             break;
 
         case 11:
-           z.ShowTicket();
+            z.ShowTicket();
             break;
     }
 
